@@ -9,10 +9,12 @@ class Client extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'brand',
-        'origin_id',
-        'destination_id',
-        'date',
-        'ticket_price'
+        'name',
+        'last_name',
+        'celphone',
+        'email',
+        'gender',
+        'nationality',
+        'identify'
     ];
 }

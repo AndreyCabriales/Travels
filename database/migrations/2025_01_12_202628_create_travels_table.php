@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('travels', function (Blueprint $table) {
             $table->id();
             $table->string('description', 100)->nullable()->default('travels');
+            $table->string('imagen', 100)->nullable()->default('imagen');
             $table->foreignId('origin_id');
             $table->foreignId('destination_id');
             $table->string('travel_date', 30)->nullable()->default('text');

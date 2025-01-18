@@ -11,10 +11,10 @@ class Travel extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'brand',
+        'description',
+        'imagen',
         'origin_id',
         'destination_id',
-        'date',
-        'ticket_price'
+        'travel_date',
     ];
 }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email', 50)->nullable()->default('text');
             $table->boolean('gender')->nullable()->default(false);
             $table->string('nationality', 20)->nullable()->default('text');
+            $table->string('identify', 100)->nullable()->default('identify');
             $table->timestamps();
         });
     }
