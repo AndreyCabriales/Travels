@@ -2,4 +2,3 @@
 
 @section('content')
 
-<title>Viajes</title>

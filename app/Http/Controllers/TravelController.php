@@ -12,8 +12,8 @@ class TravelController extends Controller
      */
     public function index()
     {
-        $travels = Travel::get();
-        return view('Dashboard/travels/index', compact('travels'));
+        $travel = Travel::get();
+        return view('Dashboard/clients/index', compact('travels'));
     }
 
     /**
@@ -35,7 +35,7 @@ class TravelController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Travel $travel)
     {
         //
     }
@@ -43,7 +43,7 @@ class TravelController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Travel $travel)
     {
         //
     }
@@ -51,7 +51,7 @@ class TravelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Travel $travel)
     {
         //
     }
@@ -59,7 +59,7 @@ class TravelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Travel $travel)
     {
         //
     }

@@ -1,3 +1,3 @@
-<div>
-    <!-- Be present above all else. - Naval Ravikant -->
-</div>
+@extends('layout/main_template')
+
+@section('content')

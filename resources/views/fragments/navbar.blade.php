@@ -1,4 +1,4 @@
-<style>
+<!--<style>
     header{
         background-color: rgba(230, 247, 244, 0.918);
         padding-block: 10px;
@@ -33,4 +33,31 @@
             <a href="{{route('sales.index')}}">Ventas</a>
         </p>
     </nav>
-</header>
+</header> -->
+
+
+<nav class="navbar navbar-expand-lg" style="background-color:rgba(230, 247, 244, 0.918)">
+    <div class="container-fluid">
+      <h3 class="navbar-brand"><i class="fa-brands fa-weibo"></i> Tiendita</h3>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('index')}}"><i class="fa-solid fa-house"></i> Inicio</a>
+          </li>
+          <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('travels.index')}}"><i class="fa-solid fa-cart-shopping"></i> Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('clients.index')}}"><i class="fa-solid fa-user"></i>Clientes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('sales.index')}}"><i class="fa-solid fa-tag"></i> Ventas</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
