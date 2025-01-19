@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sale;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -11,7 +12,8 @@ class SaleController extends Controller
      */
     public function index()
     {
-        //
+        $sales = Sale::paginate(4);
+        return view('Dashboard/sales/index', compact('sales'));
     }
 
     /**
@@ -52,6 +54,10 @@ class SaleController extends Controller
     public function update(Request $request, string $id)
     {
         //
+    }
+
+    public function delete(Sale $travel){
+        echo view ('Dashboard/sales/delete', compact('sale'));
     }
 
     /**

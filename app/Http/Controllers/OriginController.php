@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Origin;
 use Illuminate\Http\Request;
 
 class OriginController extends Controller
@@ -11,7 +12,8 @@ class OriginController extends Controller
      */
     public function index()
     {
-        //
+        $origins = Origin::paginate(4);
+        return view('Dashboard/origins/index', compact('origins'));
     }
 
     /**
@@ -52,6 +54,10 @@ class OriginController extends Controller
     public function update(Request $request, string $id)
     {
         //
+    }
+
+    public function delete(Origin $travel){
+        echo view ('Dashboard/origins/delete', compact('origin'));
     }
 
     /**

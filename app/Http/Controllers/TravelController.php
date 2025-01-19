@@ -12,8 +12,8 @@ class TravelController extends Controller
      */
     public function index()
     {
-        $travel = Travel::get();
-        return view('Dashboard/clients/index', compact('travels'));
+        $travels = Travel::paginate(4);
+        return view('Dashboard/travels/index', compact('travels'));
     }
 
     /**
@@ -56,6 +56,9 @@ class TravelController extends Controller
         //
     }
 
+    public function delete(Travel $travel){
+        echo view ('Dashboard/travels/delete', compact('product'));
+    }
     /**
      * Remove the specified resource from storage.
      */

@@ -47,10 +47,18 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('index')}}"><i class="fa-solid fa-house"></i> Inicio</a>
           </li>
-          <li class="nav-item">
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('travels.index')}}"><i class="fa-solid fa-cart-shopping"></i> Productos</a>
-          </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-plane"></i> Viajes
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{route('travels.index')}}">Viajes</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{route('origins.index')}}">Origenes</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="{{route('destinations.index')}}">Destinos</a></li>
+              </ul>
+            </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('clients.index')}}"><i class="fa-solid fa-user"></i>Clientes</a>
           </li>

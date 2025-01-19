@@ -12,7 +12,7 @@ class ClientController extends Controller
      */
     public function index()
     {
-        $clients = Client::get();
+        $clients = Client::paginate(4);
         return view('Dashboard/clients/index', compact('clients'));
     }
 
@@ -56,6 +56,9 @@ class ClientController extends Controller
         //
     }
 
+    public function delete(Client $travel){
+        echo view ('Dashboard/clients/delete', compact('client'));
+    }
     /**
      * Remove the specified resource from storage.
      */

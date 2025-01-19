@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Destination;
 use Illuminate\Http\Request;
 
 class DestinationController extends Controller
@@ -11,7 +12,8 @@ class DestinationController extends Controller
      */
     public function index()
     {
-        //
+        $destinations = Destination::paginate(4);
+        return view('Dashboard/destinations/index', compact('destinations'));
     }
 
     /**
@@ -52,6 +54,10 @@ class DestinationController extends Controller
     public function update(Request $request, string $id)
     {
         //
+    }
+
+    public function delete(Destination $travel){
+        echo view ('Dashboard/destinations/delete', compact('destination'));
     }
 
     /**
