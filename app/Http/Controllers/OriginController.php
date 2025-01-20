@@ -21,7 +21,7 @@ class OriginController extends Controller
      */
     public function create()
     {
-        //
+        return view('Dashboard/origins/create');
     }
 
     /**
@@ -29,7 +29,8 @@ class OriginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Origin::create($request->all());
+        return to_route('origins.index')->with('status', 'Origen Registrado');
     }
 
     /**

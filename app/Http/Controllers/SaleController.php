@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sale;
+use App\Models\Client;
+use App\Models\Travel;
 use Illuminate\Http\Request;
 
 class SaleController extends Controller
@@ -21,7 +23,9 @@ class SaleController extends Controller
      */
     public function create()
     {
-        //
+        $clients = Client::pluck('id');
+        $travels = Travel::pluck('id');
+        return view('Dashboard/sales/create', compact('clients', 'travels'));
     }
 
     /**
@@ -29,7 +33,8 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Sale::create($request->all());
+        return to_route('sales.index')->with('status', 'Venta Registrada');
     }
 
     /**

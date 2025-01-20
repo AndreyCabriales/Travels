@@ -21,7 +21,7 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('Dashboard/clients/create');
     }
 
     /**
@@ -29,7 +29,17 @@ class ClientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        if(isset($data["identify"])){
+            //Cambiar el nombre del archivo a cargar
+            $data["identify"] = $filename = time(). ".".$data["identify"]->extension();
+            //Guardar imagen en la carpeta pùblica
+            $request->identify->move(public_path("image/clients"), $filename);
+        }
+
+        Client::create($data);
+        return to_route('clients.index')->with('status', 'Cliente Registrado');
     }
 
     /**
@@ -45,7 +55,7 @@ class ClientController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        
     }
 
     /**

@@ -25,16 +25,16 @@
             @foreach ($clients as $c)
                 <tr>
                     <td>{{$c->name}}</td>
-                    <td>{{$t->last_name}}</td>
-                    <td>{{$t->celphone}}</td>
-                    <td>{{$t->email}}</td>
-                    <td>{{$t->gender}}</td>
-                    <td>{{$t->nationality}}</td>
-                    <td><img src="image/travels/{{$t->imagen}}" width="150" height="110" alt=""></td>
+                    <td>{{$c->last_name}}</td>
+                    <td>{{$c->celphone}}</td>
+                    <td>{{$c->email}}</td>
+                    <td>{{$c->gender}}</td>
+                    <td>{{$c->nationality}}</td>
+                    <td><img src="image/clients/{{$c->identify}}" width="150" height="110" alt=""></td>
                     <td>
-                        <a class="btn btn-primary" href="{{route("travels.show", $t)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
-                        <a class="btn btn-success" href="{{route("travels.edit", $t)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a class="btn btn-danger" href="{{route("travels.delete", $t)}}" role="button"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-primary" href="{{route("clients.show", $c)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
+                        <a class="btn btn-success" href="{{route("clients.edit", $c)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-danger" href="{{route("clients.delete", $c)}}" role="button"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             @endforeach

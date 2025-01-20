@@ -14,8 +14,8 @@
         <thead>
             <th>Hora de Salida</th>
             <th>Ciudad</th>
-            <th>Origen</th>
-            <th>Destino</th>
+            <th>Estado</th>
+            <th>Pais</th>
             <th>Acciones</th>
         </thead>
         <tbody>

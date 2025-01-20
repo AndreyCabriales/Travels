@@ -21,7 +21,7 @@ class DestinationController extends Controller
      */
     public function create()
     {
-        //
+        return view('Dashboard/destinations/create');
     }
 
     /**
@@ -29,7 +29,8 @@ class DestinationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Destination::create($request->all());
+        return to_route('destinations.index')->with('status', 'Destino Registrado');
     }
 
     /**
