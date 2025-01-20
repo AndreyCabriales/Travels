@@ -27,13 +27,9 @@
                     <td>{{$t->description}}</td>
                     <td><img src="image/travels/{{$t->imagen}}" width="150" height="110" alt=""></td>
                     <td>
-                        <p>{{$t->origin->origin_country}}</p>
-                        <p>{{$t->origin->origin_state}}</p>
                         <p>{{$t->origin->origin_city}}</p>
                     </td>
                     <td>
-                        <p>{{$t->destination->destination_country}}</p>
-                        <p>{{$t->destination->destination_state}}</p>
                         <p>{{$t->destination->destination_city}}</p>
                     </td>
                     <td>{{$t->travel_date}}</td>

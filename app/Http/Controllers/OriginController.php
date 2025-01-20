@@ -38,7 +38,7 @@ class OriginController extends Controller
      */
     public function show(Origin $origin)
     {
-        
+        return view('Dashboard/origins/show', compact('origin'));
     }
 
     /**

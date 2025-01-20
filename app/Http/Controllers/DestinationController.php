@@ -38,7 +38,7 @@ class DestinationController extends Controller
      */
     public function show(Destination $destination)
     {
-        //
+        return view('Dashboard/destinations/show', compact('destination'));
     }
 
     /**

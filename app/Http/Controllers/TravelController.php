@@ -49,7 +49,7 @@ class TravelController extends Controller
      */
     public function show(Travel $travel)
     {
-        //
+        return view('Dashboard/travels/show', compact('travel'));
     }
 
     /**

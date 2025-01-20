@@ -45,7 +45,7 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
-        //
+        return view('Dashboard/clients/show', compact('client'));
     }
 
     /**
