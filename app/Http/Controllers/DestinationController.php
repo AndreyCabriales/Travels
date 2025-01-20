@@ -36,7 +36,7 @@ class DestinationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Destination $destination)
     {
         //
     }
@@ -44,28 +44,30 @@ class DestinationController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Destination $destination)
     {
-        //
+        echo view ('Dashboard/destinations/edit',compact('destination'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Destination $destination)
     {
-        //
+        $destination->update($request->all());
+        return to_route('destinations.index') -> with ('status' , 'Destino Actualizado');
     }
 
-    public function delete(Destination $travel){
+    public function delete(Destination $destination){
         echo view ('Dashboard/destinations/delete', compact('destination'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Destination $destination)
     {
-        //
+        $destination->delete();
+        return to_route('destinations.index')->with('status', 'Destino Eliminado');
     }
 }

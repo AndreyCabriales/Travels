@@ -36,9 +36,7 @@ class TravelController extends Controller
         $data = $request->all();
 
         if(isset($data["imagen"])){
-            //Cambiar el nombre del archivo a cargar
             $data["imagen"] = $filename = time(). ".".$data["imagen"]->extension();
-            //Guardar imagen en la carpeta pùblica
             $request->imagen->move(public_path("image/travels"), $filename);
         }
 
@@ -59,7 +57,9 @@ class TravelController extends Controller
      */
     public function edit(Travel $travel)
     {
-        //
+        $origins = Origin::pluck('id','origin_city', 'origin_state', 'origin_country');
+        $destinations = Destination::pluck('id','destination_city', 'destination_state', 'destination_country');
+        echo view ('Dashboard/travels/edit',compact('origins','destinations','travel'));
     }
 
     /**
@@ -67,7 +67,15 @@ class TravelController extends Controller
      */
     public function update(Request $request, Travel $travel)
     {
-        //
+        $data = $request->all();
+
+        if(isset($data["imagen"])){
+            $data["imagen"] = $filename = time(). ".".$data["imagen"]->extension();
+            $request->imagen->move(public_path("image/travels"), $filename);
+        }
+
+        $travel->update($data);
+        return to_route('travels.index') -> with ('status' , 'Viaje Actualizado');
     }
 
     public function delete(Travel $travel){
@@ -78,6 +86,7 @@ class TravelController extends Controller
      */
     public function destroy(Travel $travel)
     {
-        //
+        $travel->delete();
+        return to_route('travels.index')->with('status', 'Viaje Eliminado');
     }
 }

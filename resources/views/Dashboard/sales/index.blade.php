@@ -24,13 +24,13 @@
             @foreach ($sales as $s)
                 <tr>
                     <td>{{$s->travel->id}}</td>
-                    <td>{{$s->travel->id}}</td>
+                    <td>{{$s->client->name}}</td>
                     <td>{{$s->sale_date}}</td>
-                    <td>{{$s->unit_pric}}</td>
+                    <td>{{$s->unit_price}}</td>
                     <td>
-                        <a class="btn btn-primary" href="{{route("sales.show", $t)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
-                        <a class="btn btn-success" href="{{route("sales.edit", $t)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a class="btn btn-danger" href="{{route("sales.delete", $t)}}" role="button"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-primary" href="{{route("sales.show", $s)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
+                        <a class="btn btn-success" href="{{route("sales.edit", $s)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-danger" href="{{route("sales.delete", $s)}}" role="button"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             @endforeach

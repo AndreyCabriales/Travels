@@ -36,36 +36,38 @@ class OriginController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Origin $origin)
     {
-        //
+        
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Origin $origin)
     {
-        //
+        echo view ('Dashboard/origins/edit',compact('origin'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Origin $origin)
     {
-        //
+        $origin->update($request->all());
+        return to_route('origins.index') -> with ('status' , 'Origen Actualizado');
     }
 
-    public function delete(Origin $travel){
+    public function delete(Origin $origin){
         echo view ('Dashboard/origins/delete', compact('origin'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Origin $origin)
     {
-        //
+        $origin->delete();
+        return to_route('origins.index')->with('status', 'Origen Eliminado');
     }
 }

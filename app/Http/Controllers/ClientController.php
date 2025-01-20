@@ -32,9 +32,7 @@ class ClientController extends Controller
         $data = $request->all();
 
         if(isset($data["identify"])){
-            //Cambiar el nombre del archivo a cargar
             $data["identify"] = $filename = time(). ".".$data["identify"]->extension();
-            //Guardar imagen en la carpeta pùblica
             $request->identify->move(public_path("image/clients"), $filename);
         }
 
@@ -45,7 +43,7 @@ class ClientController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Client $client)
     {
         //
     }
@@ -53,26 +51,34 @@ class ClientController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Client $client)
     {
-        
+        echo view ('Dashboard/clients/edit',compact('client'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Client $client)
     {
-        //
+        $data = $request->all();
+
+        if(isset($data["identify"])){
+            $data["identify"] = $filename = time(). ".".$data["identify"]->extension();
+            $request->identify->move(public_path("image/clients"), $filename);
+        }
+
+        $client->update($data);
+        return to_route('clients.index') -> with ('status' , 'Cliente Actualizado');
     }
 
-    public function delete(Client $travel){
+    public function delete(Client $client){
         echo view ('Dashboard/clients/delete', compact('client'));
     }
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Client $client)
     {
         //
     }

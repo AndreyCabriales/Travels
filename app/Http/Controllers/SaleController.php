@@ -40,7 +40,7 @@ class SaleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Sale $sale)
     {
         //
     }
@@ -48,28 +48,33 @@ class SaleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Sale $sale)
     {
-        //
+        $clients = Client::pluck('id');
+        $travels = Travel::pluck('id');
+        echo view ('Dashboard/sales/edit',compact('clients','travels','sale'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Sale $sale)
     {
-        //
+
+        $sale->update($request->all());
+        return to_route('travels.index') -> with ('status' , 'Viaje Actualizado');
     }
 
-    public function delete(Sale $travel){
+    public function delete(Sale $sale){
         echo view ('Dashboard/sales/delete', compact('sale'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Sale $sale)
     {
-        //
+        $sale->delete();
+        return to_route('sales.index')->with('status', 'Venta Eliminada');
     }
 }
