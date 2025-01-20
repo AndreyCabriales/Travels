@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
-use Illuminate\Http\Request;
+use App\Http\Requests\Destinations\StoreRequest;
+use App\Http\Requests\Destinations\UpdateRequest;
 
 class DestinationController extends Controller
 {
@@ -27,7 +28,7 @@ class DestinationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         Destination::create($request->all());
         return to_route('destinations.index')->with('status', 'Destino Registrado');
@@ -52,7 +53,7 @@ class DestinationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Destination $destination)
+    public function update(UpdateRequest $request, Destination $destination)
     {
         $destination->update($request->all());
         return to_route('destinations.index') -> with ('status' , 'Destino Actualizado');

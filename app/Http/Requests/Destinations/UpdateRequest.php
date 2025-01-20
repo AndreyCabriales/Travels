@@ -11,7 +11,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class UpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'destination_hour' =>  "required|integer",
+            'destination_city' => "required|min:5|max:40",
+            'destination_state' => "required|min:5|max:40",
+            'destination_country' => "required|min:5|max:40",
         ];
     }
 }

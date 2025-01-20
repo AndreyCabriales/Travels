@@ -4,7 +4,24 @@
 
 @include('fragments.formstyles')
 
-<h1>Editar Viajes</h1>
+<h1 style="text-align: center">Editar Viajes</h1>
+
+<style>
+    .alert-custom {
+    background-color: #ee9ca2;
+    color: #000000;
+    border: 1px solid #ff0019;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-custom ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+</style>
 
 @if($errors->any())
     @foreach ($errors->all() as $e)
@@ -13,6 +30,7 @@
         </div>        
     @endforeach
 @endif
+<br>
 
 <form action="{{route('travels.update', $travel->id)}}" method="POST" enctype="multipart/form-data">
     @csrf

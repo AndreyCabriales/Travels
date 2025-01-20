@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <h1>Ventas</h1>
+  <h1 style="text-align:center;">Ventas</h1>
     <br>
     
 
@@ -13,7 +13,7 @@
     <br>
     <br>
     <table class="table table-bordered table-striped">
-        <thead>
+        <thead class=table-dark>
             <th>Viaje</th>
             <th>Cliente</th>
             <th>Fecha</th>
@@ -29,8 +29,8 @@
                     <td>{{$s->unit_price}}</td>
                     <td>
                         <a class="btn btn-primary" href="{{route("sales.show", $s)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
-                        <a class="btn btn-success" href="{{route("sales.edit", $s)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a class="btn btn-danger" href="{{route("sales.delete", $s)}}" role="button"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-success" href="{{route("sales.edit", $s)}}" role="button"><i class="fa-solid fa-file-pen"></i></a>
+                        <a class="btn btn-danger" href="{{route("sales.delete", $s)}}" role="button"><i class="fa-solid fa-trash-can"></i></i></a>
                     </td>
                 </tr>
             @endforeach

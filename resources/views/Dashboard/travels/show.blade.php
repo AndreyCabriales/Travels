@@ -5,7 +5,7 @@
 <div style="text-align: center">
     <br>    
 <center>
-<table  class="table table-bordered" style="width: 25%; border:2px; border-radius:100% " > 
+<table  class="table table-bordered" style="width: 25%;  border-radius:100% " > 
     <thead class="table-dark">
         <th>Detalles del Viaje</th>
         <th></th>

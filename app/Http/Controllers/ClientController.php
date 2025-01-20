@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
-use Illuminate\Http\Request;
+use App\Http\Requests\Clients\StoreRequest;
+use App\Http\Requests\Clients\UpdateRequest;
 
 class ClientController extends Controller
 {
@@ -27,7 +28,7 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $data = $request->all();
 
@@ -37,7 +38,10 @@ class ClientController extends Controller
         }
 
         Client::create($data);
+
         return to_route('clients.index')->with('status', 'Cliente Registrado');
+
+
     }
 
     /**
@@ -59,7 +63,7 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Client $client)
+    public function update(UpdateRequest $request, Client $client)
     {
         $data = $request->all();
 

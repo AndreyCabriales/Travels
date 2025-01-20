@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <h1>Clients</h1>
+  <h1 style="text-align: center">Clientes</h1>
     <br>
     
 
@@ -11,7 +11,7 @@
     <br>
     <br>
     <table class="table table-bordered table-striped">
-        <thead>
+        <thead class=table-dark>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Celular</th>
@@ -33,8 +33,8 @@
                     <td><img src="image/clients/{{$c->identify}}" width="150" height="110" alt=""></td>
                     <td>
                         <a class="btn btn-primary" href="{{route("clients.show", $c)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
-                        <a class="btn btn-success" href="{{route("clients.edit", $c)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a class="btn btn-danger" href="{{route("clients.delete", $c)}}" role="button"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-success" href="{{route("clients.edit", $c)}}" role="button"><i class="fa-solid fa-file-pen"></i></a>
+                        <a class="btn btn-danger" href="{{route("clients.delete", $c)}}" role="button"><i class="fa-solid fa-trash-can"></i></a>
                     </td>
                 </tr>
             @endforeach

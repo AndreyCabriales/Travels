@@ -11,7 +11,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,11 @@ class StoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'description' =>  "required|min:5|max:100",
+            'imagen' => "required|min:5|max:1000",
+            'origin_id' => "required",
+            'destination_id' => "required",
+            'travel_date' => "required|min:5|max:30"
         ];
     }
 }

@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Travel;
 use App\Models\Origin;
 use App\Models\Destination;
-use Illuminate\Http\Request;
+use App\Http\Requests\Travels\StoreRequest;
+use App\Http\Requests\Travels\UpdateRequest;
 
 class TravelController extends Controller
 {
@@ -31,7 +32,7 @@ class TravelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         $data = $request->all();
 
@@ -65,7 +66,7 @@ class TravelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Travel $travel)
+    public function update(UpdateRequest $request, Travel $travel)
     {
         $data = $request->all();
 

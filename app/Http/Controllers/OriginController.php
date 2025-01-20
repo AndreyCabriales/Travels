@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Origin;
-use Illuminate\Http\Request;
+use App\Http\Requests\Origins\StoreRequest;
+use App\Http\Requests\Origins\UpdateRequest;
 
 class OriginController extends Controller
 {
@@ -27,7 +28,7 @@ class OriginController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         Origin::create($request->all());
         return to_route('origins.index')->with('status', 'Origen Registrado');
@@ -52,7 +53,7 @@ class OriginController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Origin $origin)
+    public function update(UpdateRequest $request, Origin $origin)
     {
         $origin->update($request->all());
         return to_route('origins.index') -> with ('status' , 'Origen Actualizado');

@@ -4,20 +4,40 @@
 
 @include('fragments.formstyles')
 
-<h1>Create de Viajes    </h1>
+<h1 style="text-align: center">Creación de Viajes</h1>
 
+<style>
+    .alert-custom {
+    background-color: #ee9ca2;
+    color: #000000;
+    border: 1px solid #ff0019;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert-custom ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+</style>
 @if($errors->any())
     @foreach ($errors->all() as $e)
-        <div class="error">
+        <div class="alert-custom">
             {{$e}}
         </div>        
     @endforeach
 @endif
 
+<br>
+<br>
+
 <form action="{{route('travels.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <label for="">Descripcion del Viaje</label>
-    <input type="text" name="descripcion">
+    <input type="text" name="description">
 
     <label for="">Imagen</label>
     <input type="file" name="imagen"> 

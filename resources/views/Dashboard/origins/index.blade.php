@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <h1>Origenes</h1>
+  <h1 style="text-align: center;">Origenes</h1>
     <br>
     
 
@@ -11,7 +11,7 @@
     <br>
     <br>
     <table class="table table-bordered table-striped">
-        <thead>
+        <thead class=table-dark>
             <th>Hora de Salida</th>
             <th>Ciudad</th>
             <th>Estado</th>
@@ -27,8 +27,8 @@
                     <td>{{$o->origin_country}}</td>
                     <td>
                         <a class="btn btn-primary" href="{{route("origins.show", $o)}}" role="button"><i class="fa-solid fa-circle-info"></i></a>
-                        <a class="btn btn-success" href="{{route("origins.edit", $o)}}" role="button"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a class="btn btn-danger" href="{{route("origins.delete", $o)}}" role="button"><i class="fa-solid fa-trash"></i></a>
+                        <a class="btn btn-success" href="{{route("origins.edit", $o)}}" role="button"><i class="fa-solid fa-file-pen"></i></a>
+                        <a class="btn btn-danger" href="{{route("origins.delete", $o)}}" role="button"><i class="fa-solid fa-trash-can"></i></i></a>
                     </td>
                 </tr>
             @endforeach
