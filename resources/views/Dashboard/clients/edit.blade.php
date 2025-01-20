@@ -36,7 +36,7 @@
     <input type="text" name="nationality" value="{{$client->nationality}}">
 
     <label for=""><i class="fa-solid fa-upload"></i> Identificacion </label>
-    <input type="file" name="imagen">
+    <input type="file" name="identify">
 
     <button type="submit">Registrar</button>
 </form>

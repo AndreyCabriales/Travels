@@ -79,7 +79,7 @@ class TravelController extends Controller
     }
 
     public function delete(Travel $travel){
-        echo view ('Dashboard/travels/delete', compact('product'));
+        echo view ('Dashboard/travels/delete', compact('travel'));
     }
     /**
      * Remove the specified resource from storage.

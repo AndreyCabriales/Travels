@@ -18,7 +18,7 @@
     @csrf
     @method('PUT')
     <label for="">Descripcion del Viaje</label>
-    <input type="text" name="descripcion" value="{{$travel->description}}">
+    <input type="text" name="description" value="{{$travel->description}}">
 
     <label for=""><i class="fa-solid fa-upload"></i> Imagen</label>
     <input type="file" name="imagen">

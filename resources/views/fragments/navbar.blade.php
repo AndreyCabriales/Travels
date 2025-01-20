@@ -38,7 +38,7 @@
 
 <nav class="navbar navbar-expand-lg" style="background-color:rgba(230, 247, 244, 0.918)">
     <div class="container-fluid">
-      <h3 class="navbar-brand"><i class="fa-brands fa-weibo"></i> Tiendita</h3>
+      <h3 class="navbar-brand"><i class="fa-solid fa-location-dot"></i> Vuelos </h3>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
