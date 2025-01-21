@@ -35,7 +35,7 @@
 <form action="{{route('destinations.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
     <label for="">Hora de Llegada</label>
-    <input type="text" name="destination_hour">
+    <input type="time" name="destination_hour">
 
     <label for="">Ciudad</label>
     <input type="text" name="destination_city"> 

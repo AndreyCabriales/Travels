@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('destinations', function (Blueprint $table) {
             $table->id();
-            $table->integer('destination_hour')->unsigned()->nullable()->default(12);
+            $table->time('destination_hour');
             $table->string('destination_city', 40)->nullable()->default('text');
             $table->string('destination_state', 40)->nullable()->default('text');
             $table->string('destination_country', 40)->nullable()->default('text');

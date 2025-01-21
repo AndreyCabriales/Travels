@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('origins', function (Blueprint $table) {
             $table->id();
-            $table->integer('origin_hour')->unsigned()->nullable()->default(12);
+            $table->time('origin_hour');
             $table->string('origin_city', 40)->nullable()->default('text');
             $table->string('origin_state', 40)->nullable()->default('text');
             $table->string('origin_country', 40)->nullable()->default('text');

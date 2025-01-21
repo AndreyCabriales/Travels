@@ -37,7 +37,7 @@
     @csrf
 
     <label for="">Hora de Salida</label>
-    <input type="text" name="origin_hour">
+    <input type="time" name="origin_hour">
 
     <label for="">Ciudad</label>
     <input type="text" name="origin_city"> 

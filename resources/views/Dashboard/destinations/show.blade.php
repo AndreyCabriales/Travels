@@ -7,25 +7,25 @@
 <center>
 <table  class="table table-bordered" style="width: 25%; border:2px; border-radius:100% " > 
     <thead class="table-dark">
-        <th>Detalles del Origen</th>
+        <th>Detalles del Destino</th>
         <th></th>
     </thead>
     <tbody>
         <tr>
             <td>Hora de Salida</td>
-            <td>{{$origin->origin_hour}}</td>
+            <td>{{$destination->destination_hour}}</td>
         </tr>
         <tr>
             <td>Ciudad</td>
-            <td>{{$origin->origin_city}}</td>
+            <td>{{$destination->destination_city}}</td>
         </tr>
         <tr>
             <td>Estado</td>
-            <td>{{$origin->origin_state}}</td>
+            <td>{{$destination->destination_state}}</td>
         </tr>
         <tr>
             <td>País</td>
-            <td>{{$origin->origin_country}}</td>
+            <td>{{$destination->destination_country}}</td>
         </tr>
     </tbody>
 </table>
