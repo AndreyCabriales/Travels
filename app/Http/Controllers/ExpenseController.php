@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Expense;
 use App\Models\Travel;
-use Illuminate\Http\Request;
+use App\Http\Requests\Expenses\StoreRequest;
+use App\Http\Requests\Expenses\UpdateRequest;
 
 class ExpenseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
         $expenses = Expense::paginate(4);
@@ -29,7 +31,7 @@ class ExpenseController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
         Expense::create($request->all());
         return to_route('expenses.index')->with('status', 'Gasto Registrado');
@@ -55,7 +57,7 @@ class ExpenseController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Expense $expense)
+    public function update(UpdateRequest $request, Expense $expense)
     {
         $expense->update($request->all());
         return to_route('expenses.index') -> with ('status' , 'Gasto Actualizado');
@@ -72,6 +74,6 @@ class ExpenseController extends Controller
     public function destroy(Expense $expense)
     {
         $expense->delete();
-        return to_route('expense.index')->with('status', 'Gasto Eliminado');
+        return to_route('expenses.index')->with('status', 'Gasto Eliminado');
     }
 }

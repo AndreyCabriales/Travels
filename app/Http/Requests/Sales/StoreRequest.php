@@ -25,7 +25,7 @@ class StoreRequest extends FormRequest
             'travel_id' =>  "required",
             'client_id' => "required",
             'sale_date' => "required|min:5|max:30",
-            'unit_price' => "required|decimal",
+            'unit_price' => "required",
         ];
     }
 }

@@ -11,7 +11,7 @@ class UpdateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -28,6 +28,7 @@ class UpdateRequest extends FormRequest
             'email' => "required|min:10|max:50",
             'gender' => "required|min:5|max:10",
             'nationality' => "required|min:5|max:20",
+            'identify' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ];
     }
 }

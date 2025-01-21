@@ -52,7 +52,31 @@
     <label for="">Asientos</label>
     <input type="double" name="seating" value="{{$expense->seating}}">
 
+    <label for="">Total</label>
+    <input type="double" name="total" value="{{$expense->total}}">
+
     <button type="submit">Registrar</button>
 </form>
+
+<table class="table table-dark table-striped" style="width: 25%; border:2px; border-radius:100% ">
+    <thead>
+        <th>Costos</th>
+        <th>Equivalencia</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1 establecimiento</td>
+            <td>$200</td>
+        </tr>
+        <tr>
+            <td>1 litro de gasolina</td>
+            <td>$24</td>
+        </tr>
+        <tr>
+            <td>1 asiento</td>
+            <td>$80</td>
+        </tr>
+    </tbody>
+  </table>
 
 @endsection

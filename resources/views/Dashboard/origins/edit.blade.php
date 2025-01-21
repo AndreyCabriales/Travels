@@ -36,7 +36,7 @@
     @csrf
     @method('PUT')
     <label for="">Hora de Salida</label>
-    <input type="text" name="origin_hour" value="{{$origin->origin_hour}}">
+    <input type="time" name="origin_hour" value="{{$origin->origin_hour}}">
 
     <label for="">Ciudad</label>
     <input type="text" name="origin_city" value="{{$origin->origin_city}}"> 
