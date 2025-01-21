@@ -65,6 +65,9 @@
           <li class="nav-item">
             <a class="nav-link" href="{{route('sales.index')}}"><i class="fa-solid fa-tag"></i> Ventas</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('expenses.index')}}"><i class="fa-solid fa-tag"></i> Gastos</a>
+          </li>
         </ul>
       </div>
     </div>

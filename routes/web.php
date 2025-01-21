@@ -42,3 +42,8 @@ Route::resource('/sales',App\Http\Controllers\SaleController::class);
 
 Route::get('/sales/{sale}/delete',
 [App\Http\Controllers\SaleController::class, 'delete'])-> name('sales.delete');
+
+Route::resource('/expenses',App\Http\Controllers\ExpenseController::class);
+
+Route::get('/expenses/{expense}/delete',
+[App\Http\Controllers\ExpenseController::class, 'delete'])-> name('expenses.delete');

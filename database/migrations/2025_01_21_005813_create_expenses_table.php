@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('expenses', function (Blueprint $table) {
             $table->id();
             $table->foreignID('travel_id');
-            $table->double('Establecimientos', 15, 8)->nullable()->default(123.4567);
-            $table->double('Gasolina', 15, 8)->nullable()->default(123.4567);
-            $table->double('Asientos', 15, 8)->nullable()->default(123.4567);
-            $table->double('Total', 15, 8)->nullable()->default(123.4567);
+            $table->integer('establishments')->unsigned()->nullable()->default(12);
+            $table->double('gasoline', 15, 8)->nullable()->default(123.4567);
+            $table->double('seating', 15, 8)->nullable()->default(123.4567);
+            $table->double('total', 15, 8)->nullable()->default(123.4567);
             $table->timestamps();
 
             $table->foreign('travel_id')->references('id')->on('travels')

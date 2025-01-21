@@ -1,7 +1,7 @@
 @extends('layout/main_template')
 
 @section('content')
-
+<br>
   <h1 style="text-align: center;">Destinos</h1>
     <br>
     
